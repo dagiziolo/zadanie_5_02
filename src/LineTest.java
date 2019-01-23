@@ -32,25 +32,13 @@ public class LineTest {
         Point endPoint2 = new Point(xEnd2, yEnd2);
 
         Line line1 = new Line(startPoint1, endPoint1);
+        Line line2 = new Line(startPoint2, endPoint2);
         LineMethod method = new LineMethod();
-        double len1 = method.length(line1);
+        Line longerLine = method.isLonger(line1, line2);
+        double len = method.length(longerLine);
+        System.out.println("("+longerLine.getStartPoint().getX()+", "+longerLine.getStartPoint().getY()+")");
+        System.out.println("("+longerLine.getEndPoint().getX()+", "+longerLine.getEndPoint().getY()+")");
+        System.out.println(len);
 
-        Line line2 = new Line(startPoint2,endPoint2);
-        LineMethod method2 = new LineMethod();
-        double len2 = method2.length(line2);
-
-        if (len1>len2) {
-            System.out.println("Dłuższym odcinkiem jest odcinek pierwszy.");
-            startPoint1.showPoint();
-            endPoint1.showPoint();
-            System.out.println(len1);
-        } else if (len1<len2) {
-            System.out.println("Dłuższym odcinkiem jest odcinek drugi.");
-            startPoint2.showPoint();
-            endPoint2.showPoint();
-            System.out.println(len2);
-        } else {
-            System.out.println("Odcinki są równe");
         }
-    }
 }
